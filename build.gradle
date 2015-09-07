@@ -1,0 +1,39 @@
+group 'net.g88'
+version '1.0-SNAPSHOT'
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'war'
+
+ext {
+    springVersion = "4.2.1.RELEASE"
+    jacksonVersion = "2.4.6"
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    compile "org.springframework:spring-context:$springVersion",
+            "org.springframework:spring-web:$springVersion",
+            "javax.servlet:javax.servlet-api:3.1.0",
+            "org.springframework:spring-webmvc:$springVersion",
+            "com.fasterxml.jackson.core:jackson-annotations:$jacksonVersion",
+            "com.fasterxml.jackson.core:jackson-core:$jacksonVersion",
+            "com.fasterxml.jackson.core:jackson-databind:$jacksonVersion",
+            "com.fasterxml.jackson.dataformat:jackson-dataformat-xml:$jacksonVersion",
+            "com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider:$jacksonVersion",
+            "com.fasterxml.jackson.module:jackson-module-jaxb-annotations:$jacksonVersion"
+
+
+            testCompile group: 'junit', name: 'junit', version: '4.11'
+}
+
