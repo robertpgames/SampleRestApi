@@ -34,6 +34,21 @@ dependencies {
             "com.fasterxml.jackson.module:jackson-module-jaxb-annotations:$jacksonVersion"
 
 
-            testCompile group: 'junit', name: 'junit', version: '4.11'
+            testCompile "org.testng:testng:6.9.4"
+}
+
+test {
+    useTestNG() {
+        suites 'src/test/resources/sample-unit.xml'
+        useDefaultListeners = true
+    }
+
+    testLogging.showStandardStreams = true
+
+    afterSuite { desc, result ->
+        if (!desc.parent) { // will match the outermost suite
+            println "Results: ${result.resultType} (${result.testCount} tests, ${result.successfulTestCount} successes, ${result.failedTestCount} failures, ${result.skippedTestCount} skipped)"
+        }
+    }
 }
 

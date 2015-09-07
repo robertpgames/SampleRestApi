@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SampleUnitTestSuite" verbose="2" parallel="classes" thread-count="5">
+    <test name="SampleUnitTests" >
+        <groups>
+            <run>
+                <include name="unit" />
+            </run>
+        </groups>
+        <packages>
+            <package name="net.g88.SampleRestApi.*" />
+        </packages>
+    </test>
+</suite>
