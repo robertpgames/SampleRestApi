@@ -21,7 +21,7 @@ public class GreetingUnitTest {
     public Object[][] positiveGreetingData() {
         return new Object[][] {
                 {"Who is 'on first'", "on first"},
-                {"Emoty namd", ""}
+                {"Empty nameSpeeling ", ""}
         };
     }
 
