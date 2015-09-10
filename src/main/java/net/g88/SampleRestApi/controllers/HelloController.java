@@ -21,6 +21,12 @@ public class HelloController {
 
     }
 
+    /**
+     * Returns a greeting
+     *
+     * @param request the request object
+     * @return a greeting
+     */
     @RequestMapping(method = RequestMethod.GET, produces = {"application/json", "application/xml"})
     public @ResponseBody ResponseEntity greeting(HttpServletRequest request) {
         Greeting greeting = new Greeting();
