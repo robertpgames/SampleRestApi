@@ -19,7 +19,9 @@ ext {
 }
 
 repositories {
-    mavenCentral()
+    maven {
+        url "https://nexus1.ci.quickbaserocks.com/nexus/content/repositories/central/"
+    }
 }
 
 task wrapper(type: Wrapper) {
